@@ -36,7 +36,10 @@ public class Main {
         right join fornitori ON fatture.numerofornitore = fornitori.numerofornitore
 
         //ESTRARRE IL TOTALE DEGLI IMPORTI DELLE FATTURE DIVISI PER RESIDENZA DEI CLIENTI
-
+        SELECT EXTRACT(YEAR FROM datafattura), clienti.regioneresidenza, SUM(importo) FROM fatture
+        join clienti
+        ON fatture.idcliente = clienti.numerocliente
+        GROUP BY clienti.regioneresidenza, EXTRACT(YEAR FROM datafattura);
 */
     }
 }
