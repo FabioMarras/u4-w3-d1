@@ -32,6 +32,10 @@ public class Main {
         HAVING COUNT(*) > 2;
 
         //RIPORTARE L'ELENCO DELLE FATTURE(NUMERO IMPORTO, IVA E DATA) CON L'AGGIUNTA DEL NOME DEL FORNITORE
+        SELECT numerofattura, importo, iva, datafattura, fornitori.denominazione FROM fatture
+        right join fornitori ON fatture.numerofornitore = fornitori.numerofornitore
+
+        //ESTRARRE IL TOTALE DEGLI IMPORTI DELLE FATTURE DIVISI PER RESIDENZA DEI CLIENTI
 
 */
     }
