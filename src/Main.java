@@ -21,6 +21,12 @@ public class Main {
         AND (inproduzione >= '2023-01-01' OR incommercio >= '2023-01-01');
 
         //CONSIDETANDO SOLTANTO LE FATTURE CON IVA AL 20%, ESTRARRE L NUMERO DI FATTURE PER OGNI ANNO
+        SELECT EXTRACT(YEAR FROM datafattura), COUNT(*) FROM fatture
+        WHERE iva = 20
+        GROUP BY EXTRACT(YEAR FROM datafattura);
+
+        //ESTRARRE GLI ANNI IN CUI SONO STATE REGISTRATE PIù DI 2 FATTURE CON TIPOLOGIA A
+        
 */
     }
 }
