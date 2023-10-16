@@ -26,7 +26,13 @@ public class Main {
         GROUP BY EXTRACT(YEAR FROM datafattura);
 
         //ESTRARRE GLI ANNI IN CUI SONO STATE REGISTRATE PIù DI 2 FATTURE CON TIPOLOGIA A
-        
+        SELECT EXTRACT(YEAR FROM datafattura), COUNT(*) FROM fatture
+        WHERE tipologia = 'A'
+        GROUP BY EXTRACT(YEAR FROM datafattura)
+        HAVING COUNT(*) > 2;
+
+        //RIPORTARE L'ELENCO DELLE FATTURE(NUMERO IMPORTO, IVA E DATA) CON L'AGGIUNTA DEL NOME DEL FORNITORE
+
 */
     }
 }
